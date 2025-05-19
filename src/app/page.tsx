@@ -5,12 +5,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Brain, Zap, Shield, Users, BarChart2, Sparkles } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-const stats = [
-  { icon: <Users className="h-7 w-7 text-blue-500" />, value: '10,000+', label: 'Active Users' },
-  { icon: <BarChart2 className="h-7 w-7 text-cyan-500" />, value: '99.99%', label: 'Uptime' },
-  { icon: <Sparkles className="h-7 w-7 text-blue-400" />, value: 'AI-Powered', label: 'Evaluation' },
-];
-
 const logos = ["meta", "openai", "google", "microsoft", "amazon", "bytedance"];
 
 // 动态数字组件
@@ -18,7 +12,6 @@ function AnimatedNumber({ value, duration = 1.2 }: { value: number; duration?: n
   const [display, setDisplay] = useState(0);
   const ref = useRef<number>(0);
   useEffect(() => {
-    let start = 0;
     let startTime: number | null = null;
     function animate(ts: number) {
       if (!startTime) startTime = ts;
