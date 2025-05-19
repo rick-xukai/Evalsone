@@ -38,6 +38,45 @@ function AnimatedNumber({ value, duration = 1.2 }: { value: number; duration?: n
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="4"
+          y="4"
+          width="20"
+          height="20"
+          rx="6"
+          fill="url(#paint0_linear)"
+        />
+        <rect
+          x="9"
+          y="9"
+          width="10"
+          height="10"
+          rx="3"
+          fill="#fff"
+          fillOpacity="0.9"
+        />
+        <circle cx="14" cy="14" r="2.5" fill="#38bdf8" />
+        <defs>
+          <linearGradient
+            id="paint0_linear"
+            x1="4"
+            y1="4"
+            x2="24"
+            y2="24"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#3b82f6" />
+            <stop offset="1" stopColor="#06b6d4" />
+          </linearGradient>
+        </defs>
+      </svg>
       {/* Banner Section - 更突出品牌 */}
       <section className="w-full min-h-[70vh] flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-100 pb-10">
         <div className="w-full flex justify-center pt-12 pb-8 relative">

@@ -42,7 +42,7 @@ export default function Home() {
       <section className="w-full min-h-[70vh] flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-100 pb-10">
         <div className="w-full flex justify-center pt-12 pb-8 relative">
           <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=1600&q=80"
             alt="EvalsOne AI Banner"
             className="rounded-3xl shadow-2xl max-h-[380px] object-cover w-[95vw] max-w-6xl border border-blue-100 animate-fadein"
             style={{ boxShadow: '0 12px 48px 0 rgba(31, 38, 135, 0.18)' }}
@@ -51,53 +51,21 @@ export default function Home() {
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
             <div className="flex items-center space-x-3 mb-4">
               <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 via-cyan-400 to-blue-300 shadow-md">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="4"
-                    y="4"
-                    width="20"
-                    height="20"
-                    rx="6"
-                    fill="url(#paint0_linear)"
-                  />
-                  <rect
-                    x="9"
-                    y="9"
-                    width="10"
-                    height="10"
-                    rx="3"
-                    fill="#fff"
-                    fillOpacity="0.9"
-                  />
-                  <circle cx="14" cy="14" r="2.5" fill="#38bdf8" />
+                <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4" width="20" height="20" rx="6" fill="url(#paint0_linear)"/>
+                  <rect x="9" y="9" width="10" height="10" rx="3" fill="#fff" fillOpacity="0.9"/>
+                  <circle cx="14" cy="14" r="2.5" fill="#38bdf8"/>
                   <defs>
-                    <linearGradient
-                      id="paint0_linear"
-                      x1="4"
-                      y1="4"
-                      x2="24"
-                      y2="24"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#3b82f6" />
-                      <stop offset="1" stopColor="#06b6d4" />
+                    <linearGradient id="paint0_linear" x1="4" y1="4" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#3b82f6"/>
+                      <stop offset="1" stopColor="#06b6d4"/>
                     </linearGradient>
                   </defs>
                 </svg>
               </span>
-              <span className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">
-                EvalsOne
-              </span>
+              <span className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">EvalsOne</span>
             </div>
-            <span className="text-lg md:text-2xl font-semibold text-white drop-shadow-lg bg-blue-900/60 px-4 py-2 rounded-xl">
-              Empowering AI Evaluation
-            </span>
+            <span className="text-lg md:text-2xl font-semibold text-white drop-shadow-lg bg-blue-900/60 px-4 py-2 rounded-xl">Empowering AI Evaluation</span>
           </div>
         </div>
         <div className="container px-4 md:px-6">
@@ -121,17 +89,10 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-x-4"
             >
-              <Button
-                size="lg"
-                className="bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-300/60 transition-shadow duration-300"
-              >
+              <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-300/60 transition-shadow duration-300">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="hover:shadow-blue-200/40 transition-shadow duration-300"
-              >
+              <Button size="lg" variant="outline" className="hover:shadow-blue-200/40 transition-shadow duration-300">
                 Learn More
               </Button>
             </motion.div>
@@ -149,15 +110,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex-1 space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">
-              Empowering AI Evaluation for Everyone
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Empowering AI Evaluation for Everyone</h2>
             <p className="text-lg text-gray-700">
-              EvalsOne leverages cutting-edge AI to provide fast, accurate, and
-              secure evaluation services for enterprises, developers, and
-              researchers. Our platform is designed for scalability,
-              reliability, and ease of use, making AI evaluation accessible to
-              all.
+              EvalsOne leverages cutting-edge AI to provide fast, accurate, and secure evaluation services for enterprises, developers, and researchers. Our platform is designed for scalability, reliability, and ease of use, making AI evaluation accessible to all.
             </p>
             <ul className="space-y-2 text-base text-blue-800">
               <li>✔️ Real-time, automated evaluation</li>
@@ -197,8 +152,7 @@ export default function Home() {
               >
                 <BarChart2 className="h-7 w-7 text-cyan-500" />
                 <span className="text-2xl font-bold text-blue-900 mt-2">
-                  <AnimatedNumber value={99} />
-                  .99%
+                  <AnimatedNumber value={99} />.99%
                 </span>
                 <span className="text-sm text-gray-600 mt-1">Uptime</span>
               </motion.div>
@@ -210,9 +164,7 @@ export default function Home() {
                 className="bg-blue-50 rounded-xl shadow p-6 flex flex-col items-center min-w-[120px]"
               >
                 <Sparkles className="h-7 w-7 text-blue-400" />
-                <span className="text-2xl font-bold text-blue-900 mt-2">
-                  AI-Powered
-                </span>
+                <span className="text-2xl font-bold text-blue-900 mt-2">AI-Powered</span>
                 <span className="text-sm text-gray-600 mt-1">Evaluation</span>
               </motion.div>
             </div>
@@ -221,10 +173,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section
-        id="features"
-        className="w-full py-12 md:py-24 lg:py-32 bg-blue-50"
-      >
+      <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
         <div className="container px-4 md:px-6">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -261,9 +210,7 @@ export default function Home() {
               <div className="rounded-full bg-blue-100 p-4">
                 <Zap className="h-7 w-7 text-blue-700" />
               </div>
-              <h3 className="text-xl font-bold text-blue-900">
-                Lightning Fast
-              </h3>
+              <h3 className="text-xl font-bold text-blue-900">Lightning Fast</h3>
               <p className="text-gray-600">
                 Real-time evaluation results with minimal latency
               </p>
@@ -278,9 +225,7 @@ export default function Home() {
               <div className="rounded-full bg-blue-100 p-4">
                 <Shield className="h-7 w-7 text-blue-700" />
               </div>
-              <h3 className="text-xl font-bold text-blue-900">
-                Secure & Reliable
-              </h3>
+              <h3 className="text-xl font-bold text-blue-900">Secure & Reliable</h3>
               <p className="text-gray-600">
                 Enterprise-grade security and reliability
               </p>
@@ -304,8 +249,7 @@ export default function Home() {
                 Ready to Get Started?
               </h2>
               <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
-                Join thousands of users who trust EvalsOne for their AI
-                evaluation needs
+                Join thousands of users who trust EvalsOne for their AI evaluation needs
               </p>
             </motion.div>
             <motion.div
@@ -314,10 +258,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Button
-                size="lg"
-                className="bg-blue-600 text-white hover:bg-blue-700"
-              >
+              <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
                 Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
@@ -341,18 +282,18 @@ export default function Home() {
             {[
               {
                 icon: <Sparkles className="h-8 w-8 text-blue-500 mx-auto" />,
-                title: 'Upload or Connect',
-                desc: 'Easily upload your data or connect via API for seamless integration.',
+                title: "Upload or Connect",
+                desc: "Easily upload your data or connect via API for seamless integration.",
               },
               {
                 icon: <Brain className="h-8 w-8 text-cyan-500 mx-auto" />,
-                title: 'AI Evaluation',
-                desc: 'Our advanced AI models analyze and evaluate your data in real time.',
+                title: "AI Evaluation",
+                desc: "Our advanced AI models analyze and evaluate your data in real time.",
               },
               {
                 icon: <BarChart2 className="h-8 w-8 text-blue-400 mx-auto" />,
-                title: 'Get Insights',
-                desc: 'Receive actionable insights and detailed reports instantly.',
+                title: "Get Insights",
+                desc: "Receive actionable insights and detailed reports instantly.",
               },
             ].map((item, i) => (
               <motion.div
@@ -364,9 +305,7 @@ export default function Home() {
                 className="bg-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-blue-200/60 transition-transform duration-300 cursor-pointer"
               >
                 {item.icon}
-                <h3 className="text-xl font-bold text-blue-900 mt-4 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-xl font-bold text-blue-900 mt-4 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -390,23 +329,23 @@ export default function Home() {
             {[
               {
                 icon: <Zap className="h-8 w-8 text-yellow-400 mx-auto" />,
-                title: 'Text Analysis',
-                desc: 'Sentiment, classification, summarization, and more.',
+                title: "Text Analysis",
+                desc: "Sentiment, classification, summarization, and more.",
               },
               {
                 icon: <Shield className="h-8 w-8 text-blue-700 mx-auto" />,
-                title: 'Image Recognition',
-                desc: 'Object detection, face recognition, scene analysis.',
+                title: "Image Recognition",
+                desc: "Object detection, face recognition, scene analysis.",
               },
               {
                 icon: <Users className="h-8 w-8 text-cyan-500 mx-auto" />,
-                title: 'Voice Processing',
-                desc: 'Speech-to-text, speaker ID, emotion detection.',
+                title: "Voice Processing",
+                desc: "Speech-to-text, speaker ID, emotion detection.",
               },
               {
                 icon: <Brain className="h-8 w-8 text-blue-500 mx-auto" />,
-                title: 'Custom Models',
-                desc: 'Bring your own models and evaluate with EvalsOne.',
+                title: "Custom Models",
+                desc: "Bring your own models and evaluate with EvalsOne.",
               },
             ].map((item, i) => (
               <motion.div
@@ -418,9 +357,7 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 hover:shadow-blue-200/60 transition-transform duration-300 cursor-pointer"
               >
                 {item.icon}
-                <h3 className="text-lg font-bold text-blue-900 mt-4 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-bold text-blue-900 mt-4 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -487,9 +424,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto"
           >
-            Connect with thousands of AI enthusiasts, developers, and industry
-            leaders. Share ideas, get support, and help shape the future of AI
-            evaluation together with EvalsOne.
+            Connect with thousands of AI enthusiasts, developers, and industry leaders. Share ideas, get support, and help shape the future of AI evaluation together with EvalsOne.
           </motion.p>
           <motion.a
             href="#"
@@ -525,22 +460,22 @@ export default function Home() {
           >
             {[
               {
-                name: 'Alice Johnson',
-                company: 'OpenAI',
-                avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+                name: "Alice Johnson",
+                company: "OpenAI",
+                avatar: "https://randomuser.me/api/portraits/women/44.jpg",
                 text: "EvalsOne's AI evaluation is fast, reliable, and incredibly easy to integrate. Highly recommended!",
               },
               {
-                name: 'Michael Lee',
-                company: 'Google',
-                avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-                text: 'The best platform for scalable AI evaluation. The support team is fantastic!',
+                name: "Michael Lee",
+                company: "Google",
+                avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+                text: "The best platform for scalable AI evaluation. The support team is fantastic!",
               },
               {
-                name: 'Sophia Wang',
-                company: 'Meta',
-                avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
-                text: 'EvalsOne helped us accelerate our AI deployment with confidence and security.',
+                name: "Sophia Wang",
+                company: "Meta",
+                avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+                text: "EvalsOne helped us accelerate our AI deployment with confidence and security.",
               },
             ].map((t, i) => (
               <motion.div
@@ -555,12 +490,7 @@ export default function Home() {
                   alt={t.name}
                   className="w-16 h-16 rounded-full border-4 border-white shadow mb-4"
                   animate={{ y: [0, -8, 0, 8, 0] }}
-                  transition={{
-                    duration: 3.2,
-                    repeat: Infinity,
-                    repeatType: 'loop',
-                    delay: i * 0.5,
-                  }}
+                  transition={{ duration: 3.2, repeat: Infinity, repeatType: "loop", delay: i * 0.5 }}
                 />
                 <p className="text-gray-700 text-base mb-4">“{t.text}”</p>
                 <div className="flex flex-col items-center">
@@ -574,10 +504,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section
-        id="faq"
-        className="w-full py-16 bg-blue-50 border-t border-blue-100"
-      >
+      <section id="faq" className="w-full py-16 bg-blue-50 border-t border-blue-100">
         <div className="container px-4 md:px-6 max-w-3xl mx-auto">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -591,16 +518,16 @@ export default function Home() {
           <div className="space-y-4">
             {[
               {
-                q: 'What is EvalsOne?',
-                a: 'EvalsOne is an advanced AI evaluation platform providing fast, secure, and scalable evaluation services for enterprises and developers.',
+                q: "What is EvalsOne?",
+                a: "EvalsOne is an advanced AI evaluation platform providing fast, secure, and scalable evaluation services for enterprises and developers.",
               },
               {
-                q: 'How secure is my data?',
-                a: 'We use enterprise-grade encryption and follow best security practices to ensure your data is always protected.',
+                q: "How secure is my data?",
+                a: "We use enterprise-grade encryption and follow best security practices to ensure your data is always protected.",
               },
               {
-                q: 'Can I integrate EvalsOne with my workflow?',
-                a: 'Yes! We provide seamless API integration and detailed documentation for all users.',
+                q: "Can I integrate EvalsOne with my workflow?",
+                a: "Yes! We provide seamless API integration and detailed documentation for all users.",
               },
             ].map((item, i) => (
               <FAQItem key={item.q} q={item.q} a={item.a} delay={0.2 * i} />

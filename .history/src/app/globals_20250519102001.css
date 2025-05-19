@@ -149,7 +149,5 @@
   100% { transform: translateX(-50%); }
 }
 .marquee {
-  display: flex;
-  width: fit-content;
   animation: marquee 14s linear infinite;
 }

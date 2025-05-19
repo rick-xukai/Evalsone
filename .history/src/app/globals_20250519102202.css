@@ -150,6 +150,6 @@
 }
 .marquee {
   display: flex;
-  width: fit-content;
+  width: max-content;
   animation: marquee 14s linear infinite;
 }
