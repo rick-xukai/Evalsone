@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="w-full py-16 bg-white">
+      <section id="solutions" className="w-full py-16 bg-white">
         <div className="container px-4 md:px-6">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -462,7 +462,7 @@ export default function Home() {
       </section>
 
       {/* Join Our Community Section */}
-      <section className="w-full py-16 bg-gradient-to-r from-blue-50 via-white to-blue-100">
+      <section id="community" className="w-full py-16 bg-gradient-to-r from-blue-50 via-white to-blue-100">
         <div className="container px-4 md:px-6 flex flex-col items-center text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
