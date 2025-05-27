@@ -1,14 +1,28 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, Brain, Zap, Shield, Users, BarChart2, Sparkles } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import {
+  ArrowRight,
+  Brain,
+  Zap,
+  Shield,
+  Users,
+  BarChart2,
+  Sparkles,
+} from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
-const logos = ["meta", "openai", "google", "microsoft", "amazon", "bytedance"];
+const logos = ['meta', 'openai', 'google', 'microsoft', 'amazon', 'bytedance'];
 
-// 动态数字组件
-function AnimatedNumber({ value, duration = 1.2 }: { value: number; duration?: number }) {
+function AnimatedNumber({
+  value,
+  duration = 1.2,
+}: {
+  value: number;
+  duration?: number;
+}) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<number>(0);
   useEffect(() => {
@@ -29,6 +43,20 @@ function AnimatedNumber({ value, duration = 1.2 }: { value: number; duration?: n
 }
 
 export default function Home() {
+  const router = useRouter();
+
+  const [isConsolexHost, setIsConsolexHost] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.location.host === 'consolex.ink';
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    const host = window.location.host;
+    setIsConsolexHost(host === 'consolex.ink');
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* Banner Section - 更突出品牌 */}
@@ -36,7 +64,7 @@ export default function Home() {
         <div className="w-full flex justify-center pt-12 pb-8 relative">
           <img
             src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
-            alt="EvalsOne AI Banner"
+            alt=""
             className="rounded-3xl shadow-2xl max-h-[380px] object-cover w-[95vw] max-w-6xl border border-blue-100 animate-fadein"
             style={{ boxShadow: '0 12px 48px 0 rgba(31, 38, 135, 0.18)' }}
           />
@@ -85,7 +113,7 @@ export default function Home() {
                 </svg>
               </span>
               <span className="text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent drop-shadow-lg">
-                EvalsOne
+                {isConsolexHost ? 'Consolex' : 'EvalsOne'}
               </span>
             </div>
             <span className="text-lg md:text-2xl font-semibold text-white drop-shadow-lg bg-blue-900/60 px-4 py-2 rounded-xl">
@@ -102,10 +130,10 @@ export default function Home() {
               className="space-y-2"
             >
               <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-blue-900 drop-shadow-lg">
-                Welcome to EvalsOne
+                Welcome to {isConsolexHost ? 'Consolex' : 'EvalsOne'}
               </h1>
               <p className="mx-auto max-w-[700px] text-gray-600 md:text-2xl font-medium">
-                The Next Generation AI Evaluation Platform
+                The Next Generation AI Platform
               </p>
             </motion.div>
             <motion.div
@@ -143,14 +171,14 @@ export default function Home() {
             className="flex-1 space-y-6"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">
-              Empowering AI Evaluation for Everyone
+              Empowering AI for Everyone
             </h2>
             <p className="text-lg text-gray-700">
-              EvalsOne leverages cutting-edge AI to provide fast, accurate, and
-              secure evaluation services for enterprises, developers, and
-              researchers. Our platform is designed for scalability,
-              reliability, and ease of use, making AI evaluation accessible to
-              all.
+              {isConsolexHost ? 'Consolex' : 'EvalsOne'} leverages cutting-edge
+              AI to provide fast, accurate, and secure evaluation services for
+              enterprises, developers, and researchers. Our platform is designed
+              for scalability, reliability, and ease of use, making AI
+              evaluation accessible to all.
             </p>
             <ul className="space-y-2 text-base text-blue-800">
               <li>✔️ Real-time, automated evaluation</li>
@@ -204,7 +232,7 @@ export default function Home() {
               >
                 <Sparkles className="h-7 w-7 text-blue-400" />
                 <span className="text-2xl font-bold text-blue-900 mt-2">
-                  AI-Powered
+                  Powered
                 </span>
                 <span className="text-sm text-gray-600 mt-1">Evaluation</span>
               </motion.div>
@@ -226,7 +254,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12"
           >
-            Why Choose EvalsOne?
+            Why Choose {isConsolexHost ? 'Consolex' : 'EvalsOne'}?
           </motion.h2>
           <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             <motion.div
@@ -297,7 +325,8 @@ export default function Home() {
                 Ready to Get Started?
               </h2>
               <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
-                Join thousands of users who trust EvalsOne for their AI
+                Join thousands of users who trust{' '}
+                {isConsolexHost ? 'Consolex' : 'EvalsOne'} for their AI
                 evaluation needs
               </p>
             </motion.div>
@@ -399,7 +428,9 @@ export default function Home() {
               {
                 icon: <Brain className="h-8 w-8 text-blue-500 mx-auto" />,
                 title: 'Custom Models',
-                desc: 'Bring your own models and evaluate with EvalsOne.',
+                desc: `Bring your own models and evaluate with ${
+                  isConsolexHost ? 'Consolex' : 'EvalsOne'
+                }.`,
               },
             ].map((item, i) => (
               <motion.div
@@ -462,7 +493,10 @@ export default function Home() {
       </section>
 
       {/* Join Our Community Section */}
-      <section id="community" className="w-full py-16 bg-gradient-to-r from-blue-50 via-white to-blue-100">
+      <section
+        id="community"
+        className="w-full py-16 bg-gradient-to-r from-blue-50 via-white to-blue-100"
+      >
         <div className="container px-4 md:px-6 flex flex-col items-center text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -482,7 +516,7 @@ export default function Home() {
           >
             Connect with thousands of AI enthusiasts, developers, and industry
             leaders. Share ideas, get support, and help shape the future of AI
-            evaluation together with EvalsOne.
+            evaluation together with {isConsolexHost ? 'Consolex' : 'EvalsOne'}.
           </motion.p>
           <motion.a
             href="#"
@@ -491,6 +525,10 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
             className="inline-block bg-blue-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+            onClick={(e) => {
+              e.preventDefault();
+              router.push('/join-us');
+            }}
           >
             Join Now
           </motion.a>
@@ -521,7 +559,9 @@ export default function Home() {
                 name: 'Alice Johnson',
                 company: 'OpenAI',
                 avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-                text: "EvalsOne's AI evaluation is fast, reliable, and incredibly easy to integrate. Highly recommended!",
+                text: `${
+                  isConsolexHost ? 'Consolex' : 'EvalsOne'
+                }'s AI evaluation is fast, reliable, and incredibly easy to integrate. Highly recommended!`,
               },
               {
                 name: 'Michael Lee',
@@ -533,7 +573,9 @@ export default function Home() {
                 name: 'Sophia Wang',
                 company: 'Meta',
                 avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
-                text: 'EvalsOne helped us accelerate our AI deployment with confidence and security.',
+                text: `${
+                  isConsolexHost ? 'Consolex' : 'EvalsOne'
+                } helped us accelerate our AI deployment with confidence and security.`,
               },
             ].map((t, i) => (
               <motion.div
@@ -584,15 +626,19 @@ export default function Home() {
           <div className="space-y-4">
             {[
               {
-                q: 'What is EvalsOne?',
-                a: 'EvalsOne is an advanced AI evaluation platform providing fast, secure, and scalable evaluation services for enterprises and developers.',
+                q: `What is ${isConsolexHost ? 'Consolex' : 'EvalsOne'}?`,
+                a: `${
+                  isConsolexHost ? 'Consolex' : 'EvalsOne'
+                } is an advanced AI evaluation platform providing fast, secure, and scalable evaluation services for enterprises and developers.`,
               },
               {
                 q: 'How secure is my data?',
                 a: 'We use enterprise-grade encryption and follow best security practices to ensure your data is always protected.',
               },
               {
-                q: 'Can I integrate EvalsOne with my workflow?',
+                q: `Can I integrate ${
+                  isConsolexHost ? 'Consolex' : 'EvalsOne'
+                } with my workflow?`,
                 a: 'Yes! We provide seamless API integration and detailed documentation for all users.',
               },
             ].map((item, i) => (
@@ -621,7 +667,10 @@ function FAQItem({ q, a, delay }: { q: string; a: string; delay: number }) {
       <div className="flex items-center justify-between">
         <span className="font-semibold text-blue-900 text-lg">{q}</span>
         <motion.span
-          animate={{ rotate: open ? 90 : 0, color: open ? '#2563eb' : '#38bdf8' }}
+          animate={{
+            rotate: open ? 90 : 0,
+            color: open ? '#2563eb' : '#38bdf8',
+          }}
           className="ml-2 text-blue-500"
           transition={{ duration: 0.3 }}
         >
@@ -630,11 +679,19 @@ function FAQItem({ q, a, delay }: { q: string; a: string; delay: number }) {
       </div>
       <motion.div
         initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
         transition={{ duration: 0.4 }}
         className="overflow-hidden text-gray-700 text-base mt-2"
       >
-        {open && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>{a}</motion.div>}
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            {a}
+          </motion.div>
+        )}
       </motion.div>
     </motion.div>
   );

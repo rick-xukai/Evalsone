@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import TwitterLogo from '@/static/twitter.jpg';
 
@@ -13,8 +15,27 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const [isConsolexHost, setIsConsolexHost] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.location.host === 'consolex.ink';
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    const host = window.location.host;
+    setIsConsolexHost(host === 'consolex.ink');
+  }, []);
+
   const openTwitterLink = () => {
-    window.open('https://x.com/EvalsOneAi', '_blank');
+    if (isConsolexHost) {
+      window.open('https://x.com/ConsoleX_Mcp', '_blank');
+    } else {
+      window.open('https://x.com/EvalsOneAi', '_blank');
+    }
   };
 
   return (
@@ -65,7 +86,7 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="text-2xl font-extrabold tracking-tight bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-cyan-600 transition-colors duration-300">
-            EvalsOne
+            {isConsolexHost ? 'Consolex' : 'EvalsOne'}
           </span>
           <span style={{ marginLeft: '10px' }}>
             <img
@@ -78,20 +99,22 @@ export default function Navbar() {
           </span>
         </Link>
         {/* Nav */}
-        <ul className="flex space-x-12">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <Link
-                href={item.href}
-                className="text-gray-700 font-semibold text-lg transition-colors duration-200 relative hover:text-blue-600"
-              >
-                <span className="relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full hover:after:h-0.5">
-                  {item.label}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {isHome && (
+          <ul className="flex space-x-12">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="text-gray-700 font-semibold text-lg transition-colors duration-200 relative hover:text-blue-600"
+                >
+                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full hover:after:h-0.5">
+                    {item.label}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   );
