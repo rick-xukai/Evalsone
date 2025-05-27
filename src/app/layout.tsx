@@ -21,6 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'The most advanced AI platform for accurate and reliable results',
     keywords: ['AI', 'platform', 'machine learning', 'artificial intelligence'],
+    icons: {
+      icon: isConsolexHost ? '/favicon-cx.ico' : '/favicon.ico',
+    },
   };
 }
 
